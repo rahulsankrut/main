@@ -90,6 +90,30 @@
             <p>&copy; 2024 MedPortal. All rights reserved. HIPAA Compliant.</p>
         </div>
     </footer>
+
+    <script src="js/auth.js"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const loginForm = document.querySelector('.login-form');
+        if (loginForm) {
+            loginForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                
+                try {
+                    const auth = new Auth();
+                    const success = await auth.login(email, password);
+                    if (success) {
+                        window.location.href = 'dashboard.html';
+                    }
+                } catch (error) {
+                    alert('Login failed: ' + error.message);
+                }
+            });
+        }
+    });
+    </script>
 </body>
 
 </html>
