@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments - MedPortal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <div class="logo">
+                <img src="logo.png" alt="MedPortal Logo">
+                <span>MedPortal</span>
+            </div>
+            <ul class="nav-list">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="patients.html">Patients</a></li>
+                <li><a href="appointments.html" class="active">Appointments</a></li>
+                <li><a href="records.html">Medical Records</a></li>
+                <li class="login-btn"><a href="index.html">Sign Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="appointments-page">
+        <!-- Calendar Controls -->
+        <section class="calendar-controls">
+            <div class="date-navigation">
+                <button class="prev-month">&lt;</button>
+                <h2>March 2024</h2>
+                <button class="next-month">&gt;</button>
+            </div>
+            <div class="view-options">
+                <button class="view-btn active">Day</button>
+                <button class="view-btn">Week</button>
+                <button class="view-btn">Month</button>
+            </div>
+            <button class="new-appointment-btn">New Appointment</button>
+        </section>
+
+        <!-- Calendar View -->
+        <section class="calendar-view">
+            <!-- Time slots -->
+            <div class="time-slots">
+                <div class="time-slot">
+                    <span class="time">9:00 AM</span>
+                    <div class="appointment-slot">
+                        <div class="appointment">
+                            <strong>John Doe</strong>
+                            <span>Annual Checkup</span>
+                            <span class="duration">30 min</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- More time slots -->
+            </div>
+        </section>
+
+        <!-- New Appointment Modal -->
+        <div class="modal" id="appointmentModal" hidden>
+            <div class="modal-content">
+                <h2>Schedule Appointment</h2>
+                <form id="appointmentForm">
+                    <div class="form-group">
+                        <label for="patientSelect">Patient</label>
+                        <select id="patientSelect" required>
+                            <option value="">Select Patient</option>
+                            <!-- Patient options -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointmentDate">Date</label>
+                        <input type="date" id="appointmentDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointmentTime">Time</label>
+                        <input type="time" id="appointmentTime" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointmentType">Type</label>
+                        <select id="appointmentType" required>
+                            <option value="checkup">Regular Checkup</option>
+                            <option value="followup">Follow-up</option>
+                            <option value="emergency">Emergency</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointmentNotes">Notes</label>
+                        <textarea id="appointmentNotes"></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit">Schedule</button>
+                        <button type="button" class="cancel">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

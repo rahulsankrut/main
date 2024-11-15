@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Records - MedPortal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav aria-label="Main navigation">
+            <div class="logo">
+                <img src="logo.png" alt="MedPortal Logo">
+                <span>MedPortal</span>
+            </div>
+            <ul class="nav-list">
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="patients.html">Patients</a></li>
+                <li><a href="appointments.html">Appointments</a></li>
+                <li><a href="records.html" class="active">Medical Records</a></li>
+                <li class="login-btn"><a href="index.html">Sign Out</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="records-page">
+        <!-- Search and Filter Section -->
+        <section class="records-search">
+            <div class="search-container">
+                <input type="search" placeholder="Search medical records..." aria-label="Search records">
+                <select id="recordType">
+                    <option value="all">All Records</option>
+                    <option value="diagnosis">Diagnoses</option>
+                    <option value="prescriptions">Prescriptions</option>
+                    <option value="lab">Lab Results</option>
+                </select>
+                <button type="button">Search</button>
+            </div>
+            <button class="new-record-btn">New Record</button>
+        </section>
+
+        <!-- Records Display -->
+        <section class="records-display">
+            <div class="records-grid">
+                <!-- Record Card -->
+                <div class="record-card">
+                    <div class="record-header">
+                        <h3>Patient: John Doe</h3>
+                        <span class="record-date">March 15, 2024</span>
+                    </div>
+                    <div class="record-type">Diagnosis</div>
+                    <div class="record-content">
+                        <p><strong>Condition:</strong> Hypertension</p>
+                        <p><strong>Notes:</strong> Patient presenting with elevated blood pressure...</p>
+                    </div>
+                    <div class="record-actions">
+                        <button class="view-btn">View Details</button>
+                        <button class="edit-btn">Edit</button>
+                    </div>
+                </div>
+                <!-- More record cards -->
+            </div>
+        </section>
+
+        <!-- New Record Modal -->
+        <div class="modal" id="recordModal" hidden>
+            <div class="modal-content">
+                <h2>Create Medical Record</h2>
+                <form id="recordForm">
+                    <div class="form-group">
+                        <label for="recordPatient">Patient</label>
+                        <select id="recordPatient" required>
+                            <option value="">Select Patient</option>
+                            <!-- Patient options -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="recordCategory">Record Type</label>
+                        <select id="recordCategory" required>
+                            <option value="diagnosis">Diagnosis</option>
+                            <option value="prescription">Prescription</option>
+                            <option value="lab">Lab Results</option>
+                            <option value="notes">Clinical Notes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="recordDetails">Details</label>
+                        <textarea id="recordDetails" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="recordAttachments">Attachments</label>
+                        <input type="file" id="recordAttachments" multiple>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit">Save Record</button>
+                        <button type="button" class="cancel">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Same footer as other pages -->
+    </footer>
+
+    <script src="js/records.js"></script>
+</body>
+</html>
