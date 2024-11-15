@@ -93,26 +93,34 @@
 
     <script src="js/auth.js"></script>
     <script>
-        // Initialize Auth and handle login
         document.addEventListener('DOMContentLoaded', () => {
+            console.log('Page loaded'); // Debug log
             const loginForm = document.querySelector('.login-form');
+            
             if (loginForm) {
+                console.log('Found login form'); // Debug log
                 loginForm.addEventListener('submit', async (e) => {
                     e.preventDefault();
+                    console.log('Form submitted'); // Debug log
+                    
+                    const email = document.getElementById('email').value;
+                    const password = document.getElementById('password').value;
+                    
+                    console.log('Attempting login with:', email); // Debug log
                     
                     try {
                         const auth = new Auth();
-                        const email = document.getElementById('email').value;
-                        const password = document.getElementById('password').value;
-                        
                         const success = await auth.login(email, password);
                         if (success) {
                             window.location.href = 'dashboard.html';
                         }
                     } catch (error) {
+                        console.error('Login error:', error); // Debug log
                         alert('Login failed: ' + error.message);
                     }
                 });
+            } else {
+                console.log('Login form not found'); // Debug log
             }
         });
     </script>
