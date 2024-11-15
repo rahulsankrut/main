@@ -4,36 +4,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>MedPortal - Healthcare Management System</title>
     <link rel="stylesheet" href="style.css">
-    <meta name="description" content="Personal website of Rahul featuring portfolio and contact information">
+    <meta name="description" content="Secure medical portal for healthcare professionals to manage patient information">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
     <header>
         <nav aria-label="Main navigation">
+            <div class="logo">
+                <img src="logo.png" alt="MedPortal Logo">
+                <span>MedPortal</span>
+            </div>
             <ul class="nav-list">
-                <li><a href="#home" aria-current="page">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#patients">Patients</a></li>
+                <li><a href="#appointments">Appointments</a></li>
+                <li><a href="#records">Medical Records</a></li>
+                <li class="login-btn"><a href="#login">Sign In</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home" class="hero-section">
-            <h1>Welcome to Rahul's Website</h1>
-            <p class="hero-text">Hi! I'm Rahul, and I create amazing web experiences.</p>
-            <button class="cta-button" aria-label="Learn more about my work">Get Started</button>
+        <!-- Login Section -->
+        <section id="login" class="login-section">
+            <div class="login-container">
+                <h1>Healthcare Professional Login</h1>
+                <form class="login-form" action="/login" method="POST">
+                    <div class="form-group">
+                        <label for="email">Medical License Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="login-button">Sign In</button>
+                    <a href="#forgot-password" class="forgot-password">Forgot Password?</a>
+                </form>
+            </div>
+        </section>
+
+        <!-- Features Preview (visible only when logged out) -->
+        <section class="features">
+            <h2>Streamline Your Practice</h2>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <i class="icon-patients"></i>
+                    <h3>Patient Management</h3>
+                    <p>Securely access and manage patient records</p>
+                </div>
+                <div class="feature-card">
+                    <i class="icon-calendar"></i>
+                    <h3>Appointment Scheduling</h3>
+                    <p>Efficiently manage your daily appointments</p>
+                </div>
+                <div class="feature-card">
+                    <i class="icon-records"></i>
+                    <h3>Medical Records</h3>
+                    <p>Digital storage of all patient medical history</p>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Rahul's Portfolio. All rights reserved.</p>
-        <div class="social-links">
-            <a href="https://linkedin.com/" aria-label="Visit my LinkedIn profile">LinkedIn</a>
-            <a href="https://github.com/" aria-label="Visit my GitHub profile">GitHub</a>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>Contact Support</h4>
+                <p>Email: support@medportal.com</p>
+                <p>Phone: 1-800-MED-PORT</p>
+            </div>
+            <div class="footer-section">
+                <h4>Important Links</h4>
+                <ul>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#hipaa">HIPAA Compliance</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 MedPortal. All rights reserved. HIPAA Compliant.</p>
         </div>
     </footer>
 </body>
