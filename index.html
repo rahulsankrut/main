@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Website</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Personal website of Rahul featuring portfolio and contact information">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
+        <nav aria-label="Main navigation">
+            <ul class="nav-list">
+                <li><a href="#home" aria-current="page">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -20,14 +22,19 @@
     </header>
 
     <main>
-        <section id="home">
+        <section id="home" class="hero-section">
             <h1>Welcome to Rahul's Website</h1>
-            <p>This is a simple website template to get you started.</p>
+            <p class="hero-text">Hi! I'm Rahul, and I create amazing web experiences.</p>
+            <button class="cta-button" aria-label="Learn more about my work">Get Started</button>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 My Website</p>
+        <p>&copy; 2024 Rahul's Portfolio. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://linkedin.com/" aria-label="Visit my LinkedIn profile">LinkedIn</a>
+            <a href="https://github.com/" aria-label="Visit my GitHub profile">GitHub</a>
+        </div>
     </footer>
 </body>
 
