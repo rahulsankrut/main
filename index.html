@@ -32,7 +32,7 @@
         <section id="login" class="login-section">
             <div class="login-container">
                 <h1>Healthcare Professional Login</h1>
-                <form class="login-form" action="/login" method="POST">
+                <form class="login-form">
                     <div class="form-group">
                         <label for="email">Medical License Email</label>
                         <input type="email" id="email" name="email" required>
@@ -93,26 +93,28 @@
 
     <script src="js/auth.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const loginForm = document.querySelector('.login-form');
-        if (loginForm) {
-            loginForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const email = document.getElementById('email').value;
-                const password = document.getElementById('password').value;
-                
-                try {
-                    const auth = new Auth();
-                    const success = await auth.login(email, password);
-                    if (success) {
-                        window.location.href = 'dashboard.html';
+        // Initialize Auth and handle login
+        document.addEventListener('DOMContentLoaded', () => {
+            const loginForm = document.querySelector('.login-form');
+            if (loginForm) {
+                loginForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    try {
+                        const auth = new Auth();
+                        const email = document.getElementById('email').value;
+                        const password = document.getElementById('password').value;
+                        
+                        const success = await auth.login(email, password);
+                        if (success) {
+                            window.location.href = 'dashboard.html';
+                        }
+                    } catch (error) {
+                        alert('Login failed: ' + error.message);
                     }
-                } catch (error) {
-                    alert('Login failed: ' + error.message);
-                }
-            });
-        }
-    });
+                });
+            }
+        });
     </script>
 </body>
 
