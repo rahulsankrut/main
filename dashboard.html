@@ -8,7 +8,19 @@
 </head>
 <body>
     <header>
-        <!-- Same navigation as index.html -->
+        <nav aria-label="Main navigation">
+            <div class="logo">
+                <img src="logo.png" alt="MedPortal Logo">
+                <span>MedPortal</span>
+            </div>
+            <ul class="nav-list">
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="patients.html">Patients</a></li>
+                <li><a href="appointments.html">Appointments</a></li>
+                <li><a href="records.html">Medical Records</a></li>
+                <li><button class="logout-btn">Sign Out</button></li>
+            </ul>
+        </nav>
     </header>
 
     <main class="dashboard">
@@ -19,31 +31,27 @@
             <section class="dashboard-card">
                 <h2>Today's Schedule</h2>
                 <div class="appointment-list">
-                    <div class="appointment">
-                        <time>9:00 AM</time>
-                        <span>John Doe - Annual Checkup</span>
-                    </div>
-                    <!-- More appointments -->
+                    <!-- Appointments will be loaded here -->
                 </div>
             </section>
 
             <!-- Patient Stats -->
             <section class="dashboard-card">
                 <h2>Patient Statistics</h2>
-                <!-- Add stats here -->
+                <div class="stats-grid">
+                    <!-- Stats will be loaded here -->
+                </div>
             </section>
 
             <!-- Recent Records -->
             <section class="dashboard-card">
                 <h2>Recent Records</h2>
-                <!-- Add recent records -->
+                <div class="records-list">
+                    <!-- Records will be loaded here -->
+                </div>
             </section>
         </div>
     </main>
-
-    <footer>
-        <!-- Same footer as index.html -->
-    </footer>
 
     <script src="js/auth.js"></script>
     <script src="js/dashboard.js"></script>
